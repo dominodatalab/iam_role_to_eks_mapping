@@ -8,6 +8,7 @@ ENV PYTHONPATH=/
 ENV FLASK_ENV=production
 ENV LOG_LEVEL=DEBUG
 RUN pip install --upgrade pip
+RUN ls
 RUN pip install --user -r requirements.txt
 ADD iam_to_sa_mapping /iam_to_sa_mapping
 ENTRYPOINT ["python",  "/iam_to_sa_mapping/iam_to_sa_service.py"]
